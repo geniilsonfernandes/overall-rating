@@ -20,6 +20,12 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
+  "jest": {
+    "testMatch": [
+      "<rootDir>/src/**/*.test.{js,jsx,ts,tsx}",
+      "<rootDir>/src/components/**/test.@(js|jsx|ts|tsx)"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
