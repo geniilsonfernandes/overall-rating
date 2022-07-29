@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import * as S from "./styles";
 
-const Star = ({ check }) => {
+const StarIcon = ({ check }) => {
   return (
     <S.Wrapper
       active={check}
@@ -24,8 +24,8 @@ const Star = ({ check }) => {
   );
 };
 
-Star.propTypes = {
+StarIcon.propTypes = {
   check: PropTypes.bool
 };
 
-export default Star;
+export default StarIcon;

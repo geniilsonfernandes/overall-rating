@@ -1,10 +1,10 @@
 import renderWithTheme from "../../utils/test/renderWithTheme";
-import Star from ".";
+import StarIcon from ".";
 import { screen } from "@testing-library/react";
 
-describe("Star", () => {
-  it("should toggle star", () => {
-    const { container } = renderWithTheme(<Star check={false} />);
+describe("StarIcon", () => {
+  it("should toggle StarIcon", () => {
+    const { container } = renderWithTheme(<StarIcon check={false} />);
 
     const starButton = container.firstChild;
 
