@@ -8,13 +8,17 @@ const RatingCounter = ({ onRating }) => {
   const [starsAmount, setStarsAmount] = useState(Array(5).fill(false));
   const [ratingCounter, setRatingCounter] = useState(0);
 
-  const handleClick = (rating, value) => {
+  const handleClick = (rating) => {
+
     const newRatingAmount = starsAmount.map((_, i) =>
-      i < rating ? (ratingCounter != rating ? true : value) : false
+      i < rating
+        ? (ratingCounter != rating ? true : false)
+        : false
     );
-    setRatingCounter(ratingCounter < rating ? rating : 0);
+
     setStarsAmount(newRatingAmount);
-    !!onRating && onRating(rating);
+    setRatingCounter(ratingCounter === rating ? 0 : rating);
+    !!onRating && onRating(ratingCounter === rating ? 0 : rating);
   };
 
   return (
@@ -22,7 +26,7 @@ const RatingCounter = ({ onRating }) => {
       <S.Labe2>Overall rating</S.Labe2>
       <S.RatingGrid aria-label="rating star">
         {starsAmount.map((value, index) => (
-          <S.GridItem key={index} onClick={() => handleClick(index + 1, !value)}>
+          <S.GridItem key={index} onClick={() => handleClick(index + 1)}>
             <Star check={value} />
           </S.GridItem>
         ))}
