@@ -1,11 +1,10 @@
 import * as S from "./styles";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
 const Radio = ({ children, onCheck, id, name, value }) => {
   const handleCheked = (value) => {
     !!onCheck && onCheck(value);
   };
-
 
   return (
     <S.Wrapper>
@@ -26,7 +25,7 @@ Radio.propTypes = {
   onCheck: PropTypes.func,
   id: PropTypes.string,
   name: PropTypes.string,
-  value: PropTypes.string,
-}
+  value: PropTypes.string
+};
 
 export default Radio;

@@ -1,5 +1,5 @@
 import * as S from "./styles";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
 const TextArea = ({ placeholder, label, id, onChange, name }) => {
   const handleChange = (value) => {
@@ -26,6 +26,6 @@ TextArea.propTypes = {
   id: PropTypes.string,
   onChange: PropTypes.func,
   type: PropTypes.string
-}
+};
 
 export default TextArea;

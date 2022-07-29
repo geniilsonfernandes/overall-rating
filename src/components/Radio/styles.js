@@ -1,8 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
-  width: 100%;
-  display: flex;
+  display: inline-flex;
   gap: 8px;
   align-items: center;
 `;
@@ -34,8 +33,8 @@ export const Input = styled.input`
     }
     &:before {
       content: "";
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 1.8rem;
+      height: 1.8rem;
       border-radius: 50%;
       background: ${theme.colors.black[500]};
       transition: opacity ease-in-out 200ms;

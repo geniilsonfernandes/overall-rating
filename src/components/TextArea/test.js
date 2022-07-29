@@ -7,7 +7,7 @@ const props = {
   label: "Product review",
   placeholder: "i have a dream",
   id: "review",
-  name: "review",
+  name: "review"
 };
 
 describe("Input", () => {

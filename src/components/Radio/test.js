@@ -3,7 +3,6 @@ import Radio from ".";
 import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-
 describe("Input", () => {
   it("should render the radio input and set as checked", () => {
     const onChange = jest.fn();

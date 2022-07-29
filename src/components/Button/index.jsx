@@ -2,12 +2,11 @@ import styled, { css } from "styled-components";
 
 const WrapperModifier = {
   loading: (theme) => css`
-    background: red;
     pointer-events: none;
     cursor: not-allowed;
     background: ${theme.colors.black[500]};
     opacity: 0.7;
-  `,
+  `
 };
 
 const Button = styled.button`
@@ -31,6 +30,5 @@ const Button = styled.button`
     ${isLoading && WrapperModifier.loading(theme)}
   `}
 `;
-
 
 export default Button;

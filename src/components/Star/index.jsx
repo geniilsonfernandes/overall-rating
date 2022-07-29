@@ -25,7 +25,7 @@ const Star = ({ check }) => {
 };
 
 Star.propTypes = {
-  check: PropTypes.bool,
+  check: PropTypes.bool
 };
 
 export default Star;

@@ -4,7 +4,7 @@ const wrapperModifier = {
   active: () => css`
     stroke: #ffb444;
     fill: #ffec8a;
-  `,
+  `
 };
 
 export const Wrapper = styled.svg`

@@ -1,5 +1,5 @@
 import * as S from "./styles";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
 const Input = ({ placeholder, label, id, onChange, type, name }) => {
   const handleChange = (value) => {
@@ -26,7 +26,7 @@ Input.propTypes = {
   name: PropTypes.string,
   id: PropTypes.string,
   onChange: PropTypes.func,
-  type: PropTypes.string,
-}
+  type: PropTypes.string
+};
 
 export default Input;

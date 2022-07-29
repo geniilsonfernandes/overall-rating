@@ -7,19 +7,30 @@ export const decorators = [
   (Story) => (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <div style={{ margin: " 0 auto", maxWidth: "1440px" }}>
+      <div
+        style={{
+          margin: " 0 auto",
+          maxWidth: "1440px"
+        }}
+      >
         <Story />
       </div>
     </ThemeProvider>
-  ),
+  )
 ];
 
 export const parameters = {
   backgrounds: {
     default: "white",
     values: [
-      { name: "black", value: "#000" },
-      { name: "white", value: "#fff" },
-    ],
-  },
+      {
+        name: "black",
+        value: "#000"
+      },
+      {
+        name: "white",
+        value: "#fff"
+      }
+    ]
+  }
 };
