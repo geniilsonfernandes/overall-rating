@@ -19,5 +19,8 @@ export default {
     xlarge: "4.2rem",
     biger: "5.2rem"
   },
-  radius: 4
+  radius: 4,
+  media: {
+    mobile: "768px"
+  }
 };
