@@ -50,5 +50,9 @@ export const Input = styled.textarea`
       background-color: ${theme.colors.black[500]};
       border: 4px solid #fff;
     }
+
+    @media (max-width: ${theme.media.mobile}) {
+      min-height: 200px;
+    }
   `}
 `;
