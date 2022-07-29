@@ -14,7 +14,7 @@ export const RatingGrid = styled.div`
   gap: 4px;
   padding: 16px 0;
 `;
-export const GridItem = styled.div`
+export const GridItem = styled.button`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
