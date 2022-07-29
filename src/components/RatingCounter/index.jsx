@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Star from "../Star";
+import StarIcon from "../StarIcon";
 import PropTypes from "prop-types";
 
 import * as S from "./styles";
@@ -27,7 +27,7 @@ const RatingCounter = ({ onRating }) => {
       <S.RatingGrid aria-label="rating star">
         {starsAmount.map((value, index) => (
           <S.GridItem key={index} onClick={() => handleClick(index + 1)}>
-            <Star check={value} />
+            <StarIcon check={value} />
           </S.GridItem>
         ))}
       </S.RatingGrid>
