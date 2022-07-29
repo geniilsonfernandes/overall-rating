@@ -10,7 +10,7 @@ const props = {
   name: "review"
 };
 
-describe("Input", () => {
+describe("Textarea", () => {
   it("should render the input correctly and type text 'i liked'", () => {
     const onChange = jest.fn();
     renderWithTheme(<Textarea {...props} onChange={onChange} type="text" />);
