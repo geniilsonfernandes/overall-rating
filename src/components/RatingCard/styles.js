@@ -12,14 +12,10 @@ export const Wrapper = styled.div`
 `;
 
 export const Head = styled.div`
-  ${({ theme }) => css`
+  ${() => css`
     display: flex;
     gap: 16px;
     align-items: center;
-    @media (max-width: ${theme.media.mobile}) {
-      flex-direction: column;
-      align-items: flex-start;
-    }
   `}
 `;
 export const HeadGroup = styled.div`
