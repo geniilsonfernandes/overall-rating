@@ -5,29 +5,30 @@ import Radio from "../Radio";
 import Button from "../Button";
 import RatingCounter from "../RatingCounter";
 import Checkbox from "../Checkbox";
-import { CloseIcon } from '../../Icons'
+import { CloseIcon } from "../../Icons";
 
 import * as S from "./styles";
 
 const RatingForm = () => {
-  const [title, setTitle] = useState('')
-  const [review, setReview] = useState('')
-  const [recommed, setRecommed] = useState('')
-  const [nickname, setNickname] = useState('')
-  const [email, setEmail] = useState('')
-  const [terms, setTerms] = useState('')
-  const [rating, setRating] = useState(0)
+  const [title, setTitle] = useState("");
+  const [review, setReview] = useState("");
+  const [recommed, setRecommed] = useState("");
+  const [nickname, setNickname] = useState("");
+  const [email, setEmail] = useState("");
+  const [terms, setTerms] = useState("");
+  const [rating, setRating] = useState(0);
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     console.log({ title, review, recommed, nickname, email, terms, rating });
-  }
+  };
 
   return (
     <S.Wrapper>
       <S.Form onSubmit={handleSubmit}>
-
-        <S.Close><CloseIcon /></S.Close>
+        <S.Close>
+          <CloseIcon />
+        </S.Close>
 
         <RatingCounter onRating={setRating} />
         <S.FormItem>
@@ -83,7 +84,7 @@ const RatingForm = () => {
         </S.FormItemGrid>
 
         <S.FormItem>
-          <Checkbox name="terms" value="yes" id="terms-yes" onCheck={setTerms} >
+          <Checkbox name="terms" value="yes" id="terms-yes" onCheck={setTerms}>
             I accept the terms and conditions
           </Checkbox>
         </S.FormItem>
@@ -98,7 +99,6 @@ const RatingForm = () => {
         <S.FormFooter>
           <Button>Submit product review</Button>
         </S.FormFooter>
-
       </S.Form>
     </S.Wrapper>
   );

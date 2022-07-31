@@ -14,7 +14,7 @@ describe("RatingCounter", () => {
 
     userEvent.click(ratingStars[2]);
     expect(onRating).toBeCalledWith(3);
-    
+
     userEvent.click(ratingStars[2]);
     expect(onRating).toBeCalledWith(0);
   });

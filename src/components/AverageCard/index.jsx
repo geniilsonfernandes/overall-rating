@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import StarIcon from "../StarIcon";
 
 const AverageCard = ({ rating }) => {
-
   return (
     <S.Wrapper>
       <S.Average>
@@ -16,7 +15,7 @@ const AverageCard = ({ rating }) => {
 };
 
 AverageCard.propTypes = {
-  rating: PropTypes.number,
+  rating: PropTypes.number
 };
 
 export default AverageCard;

@@ -5,4 +5,4 @@ export default {
   component: StarIcon
 };
 
-export const Default = (args) => <StarIcon {...args} onCheck={() => { }} />;
+export const Default = (args) => <StarIcon {...args} onCheck={() => {}} />;

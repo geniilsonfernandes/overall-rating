@@ -2,7 +2,6 @@ import * as S from "./styles";
 import PropTypes from "prop-types";
 
 const UserDisplay = ({ user, excerpt, src }) => {
-
   return (
     <S.Wrapper>
       <S.Photo src={src} alt={user} />
@@ -17,7 +16,7 @@ const UserDisplay = ({ user, excerpt, src }) => {
 UserDisplay.propTypes = {
   user: PropTypes.string,
   excerpt: PropTypes.string,
-  src: PropTypes.string,
+  src: PropTypes.string
 };
 
 export default UserDisplay;

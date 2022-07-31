@@ -9,11 +9,8 @@ const RatingCounter = ({ onRating }) => {
   const [ratingCounter, setRatingCounter] = useState(0);
 
   const handleClick = (rating) => {
-
     const newRatingAmount = starsAmount.map((_, i) =>
-      i < rating
-        ? (ratingCounter != rating ? true : false)
-        : false
+      i < rating ? (ratingCounter != rating ? true : false) : false
     );
 
     setStarsAmount(newRatingAmount);

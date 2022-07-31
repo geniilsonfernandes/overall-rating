@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 
 const Checkbox = ({ children, onCheck, id, name, value }) => {
-  const [checked, setChecked] = useState(false)
+  const [checked, setChecked] = useState(false);
 
   const handleCheked = () => {
-    const status = !checked // true => false => true
-    setChecked(status)
+    const status = !checked; // true => false => true
+    setChecked(status);
 
-    !!onCheck && onCheck(status)
+    !!onCheck && onCheck(status);
   };
 
   return (

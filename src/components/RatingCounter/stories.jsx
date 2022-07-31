@@ -5,4 +5,6 @@ export default {
   component: RatingCounter
 };
 
-export const Default = (args) => <RatingCounter {...args} onRating={() => { }} />;
+export const Default = (args) => (
+  <RatingCounter {...args} onRating={() => {}} />
+);

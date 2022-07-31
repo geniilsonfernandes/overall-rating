@@ -1,10 +1,9 @@
 import * as S from "./styles";
-import StarIcon from '../StarIcon'
-import { UserIcon } from '../../Icons/index'
+import StarIcon from "../StarIcon";
+import { UserIcon } from "../../Icons/index";
 import PropTypes from "prop-types";
 
 const RatingCard = ({ rating, author, date, title, review }) => {
-
   return (
     <S.Wrapper>
       <S.Head>

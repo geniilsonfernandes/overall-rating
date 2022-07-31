@@ -12,6 +12,6 @@ export const Default = (args) => (
 );
 
 Default.args = {
-  onCheck: () => { },
+  onCheck: () => {},
   name: "terms"
 };
