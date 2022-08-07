@@ -26,7 +26,7 @@ export const Head = styled(Container)`
   `}
 `;
 
-export const SectionContainer = styled.div`
+export const MainContainer = styled.main`
   ${({ theme }) => css`
     background: ${theme.colors.background};
     border-radius: 16px 16px 0 0;

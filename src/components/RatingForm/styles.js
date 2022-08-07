@@ -4,10 +4,10 @@ export const Wrapper = styled.div`
   ${({ theme }) => css`
     padding: 64px 32px;
     max-width: 658px;
-    box-shadow: 0px 4px 139px rgba(228, 228, 228, 0.4);
     border-radius: 16px;
     margin: 0 auto;
     position: relative;
+    background: ${theme.colors.white[100]};
     @media (max-width: ${theme.media.mobile}) {
       padding: 32px 16px;
     }

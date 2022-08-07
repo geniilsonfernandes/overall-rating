@@ -1,7 +1,7 @@
 import * as S from "./styles";
 import PropTypes from "prop-types";
 
-const Input = ({ placeholder, label, id, onChange, type, name }) => {
+const FormInput = ({ placeholder, label, id, onChange, type, name }) => {
   const handleChange = (value) => {
     onChange && onChange(value);
   };
@@ -20,7 +20,7 @@ const Input = ({ placeholder, label, id, onChange, type, name }) => {
   );
 };
 
-Input.propTypes = {
+FormInput.propTypes = {
   placeholder: PropTypes.string,
   label: PropTypes.string,
   name: PropTypes.string,
@@ -29,4 +29,4 @@ Input.propTypes = {
   type: PropTypes.string
 };
 
-export default Input;
+export default FormInput;

@@ -1,6 +1,6 @@
 import * as S from "./styles";
 import PropTypes from "prop-types";
-import StarIcon from "../StarIcon";
+import StarIcon from "../StarCheckbox";
 
 const AverageCard = ({ rating }) => {
   return (

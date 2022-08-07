@@ -1,5 +1,5 @@
 import * as S from "./styles";
-import StarIcon from "../StarIcon";
+import StarIcon from "../StarCheckbox";
 import { UserIcon } from "../../Icons/index";
 import PropTypes from "prop-types";
 

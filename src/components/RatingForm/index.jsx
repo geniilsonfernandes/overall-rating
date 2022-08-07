@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import Imput from "../Input";
+import FormInput from "../FormInput";
 import TextArea from "../TextArea";
-import Radio from "../Radio";
+import Radio from "../FormRadio";
 import Button from "../Button";
 import RatingCounter from "../RatingCounter";
-import Checkbox from "../Checkbox";
+import Checkbox from "../FormCheckbox";
+import PropTypes from "prop-types";
 import { CloseIcon } from "../../Icons";
 
 import * as S from "./styles";
 
-const RatingForm = () => {
+const RatingForm = ({ onClose }) => {
   const [title, setTitle] = useState("");
   const [review, setReview] = useState("");
   const [recommed, setRecommed] = useState("");
@@ -18,6 +19,9 @@ const RatingForm = () => {
   const [terms, setTerms] = useState("");
   const [rating, setRating] = useState(0);
 
+  const handleCloseClick = () => {
+    onClose && onClose();
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({ title, review, recommed, nickname, email, terms, rating });
@@ -25,14 +29,13 @@ const RatingForm = () => {
 
   return (
     <S.Wrapper>
+      <S.Close onClick={() => handleCloseClick()}>
+        <CloseIcon />
+      </S.Close>
       <S.Form onSubmit={handleSubmit}>
-        <S.Close>
-          <CloseIcon />
-        </S.Close>
-
         <RatingCounter onRating={setRating} />
         <S.FormItem>
-          <Imput
+          <FormInput
             label="Review title"
             name="title"
             placeholder="Example: Easy to use"
@@ -65,7 +68,7 @@ const RatingForm = () => {
         </S.FormItem>
 
         <S.FormItemGrid>
-          <Imput
+          <FormInput
             label="Nickname"
             name="nickname"
             placeholder="Example: bob27"
@@ -73,7 +76,7 @@ const RatingForm = () => {
             id="nickname"
             onChange={setNickname}
           />
-          <Imput
+          <FormInput
             label="Email address (will not be published)"
             name="email"
             placeholder="Example: your@email.com"
@@ -102,6 +105,10 @@ const RatingForm = () => {
       </S.Form>
     </S.Wrapper>
   );
+};
+
+RatingForm.propTypes = {
+  onClose: PropTypes.func
 };
 
 export default RatingForm;
