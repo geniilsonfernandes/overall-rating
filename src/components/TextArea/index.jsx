@@ -1,9 +1,10 @@
-import * as S from "./styles";
 import PropTypes from "prop-types";
 
-const TextArea = ({ placeholder, label, id, onChange, name }) => {
+import * as S from "./styles";
+
+const TextArea = ({ placeholder, label, id, onChange, name, errorMessage }) => {
   const handleChange = (value) => {
-    onChange && onChange({ [name]: value });
+    onChange && onChange(value);
   };
 
   return (
@@ -14,7 +15,9 @@ const TextArea = ({ placeholder, label, id, onChange, name }) => {
         id={id}
         name={name}
         onChange={({ target }) => handleChange(target.value)}
+        isError={!!errorMessage}
       />
+      <S.Error>{errorMessage}</S.Error>
     </S.Wrapper>
   );
 };
@@ -25,7 +28,8 @@ TextArea.propTypes = {
   name: PropTypes.string,
   id: PropTypes.string,
   onChange: PropTypes.func,
-  type: PropTypes.string
+  type: PropTypes.string,
+  errorMessage: PropTypes.string
 };
 
 export default TextArea;

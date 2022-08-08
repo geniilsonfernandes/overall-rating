@@ -12,8 +12,25 @@ export const Label = styled.label`
     color: ${theme.colors.black[500]};
   `}
 `;
-export const Input = styled.textarea`
+
+export const Error = styled.span`
   ${({ theme }) => css`
+    margin-top: 8px;
+    display: block;
+    font-weight: 400;
+    font-size: ${theme.fontSizes.small};
+    color: ${theme.colors.red[100]};
+  `}
+`;
+
+const InputModifiers = {
+  error: (theme) => css`
+    border: 2px solid ${theme.colors.red[100]};
+  `
+};
+
+export const Input = styled.textarea`
+  ${({ theme, isError }) => css`
     border: 2px solid ${theme.colors.black[100]};
     border-radius: ${theme.radius + 2}px;
     padding: 16px;
@@ -54,5 +71,6 @@ export const Input = styled.textarea`
     @media (max-width: ${theme.media.mobile}) {
       min-height: 200px;
     }
+    ${isError && InputModifiers.error(theme)}
   `}
 `;
