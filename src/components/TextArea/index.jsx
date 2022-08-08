@@ -2,7 +2,15 @@ import PropTypes from "prop-types";
 
 import * as S from "./styles";
 
-const TextArea = ({ placeholder, label, id, onChange, name, errorMessage }) => {
+const TextArea = ({
+  placeholder,
+  label,
+  id,
+  onChange,
+  name,
+  errorMessage,
+  onBlur
+}) => {
   const handleChange = (value) => {
     onChange && onChange(value);
   };
@@ -14,6 +22,7 @@ const TextArea = ({ placeholder, label, id, onChange, name, errorMessage }) => {
         placeholder={placeholder}
         id={id}
         name={name}
+        onBlur={() => onBlur()}
         onChange={({ target }) => handleChange(target.value)}
         isError={!!errorMessage}
       />
@@ -28,6 +37,7 @@ TextArea.propTypes = {
   name: PropTypes.string,
   id: PropTypes.string,
   onChange: PropTypes.func,
+  onBlur: PropTypes.func,
   type: PropTypes.string,
   errorMessage: PropTypes.string
 };
