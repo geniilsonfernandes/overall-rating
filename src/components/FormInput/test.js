@@ -40,7 +40,7 @@ describe("Input", () => {
 
     expect(input).toHaveFocus();
   });
-  it("should be type text and name ", () => {
+  it("should be type text and have name ", () => {
     const onChange = jest.fn();
     renderWithTheme(<Input {...props} onChange={onChange} type="text" />);
 

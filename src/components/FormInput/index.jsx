@@ -1,10 +1,22 @@
-import * as S from "./styles";
+import { useState } from "react";
 import PropTypes from "prop-types";
 
-const FormInput = ({ placeholder, label, id, onChange, type, name }) => {
-  // TODO cria a validacao de imput
+import * as S from "./styles";
+
+const FormInput = ({
+  placeholder,
+  label,
+  id,
+  onChange,
+  type,
+  name,
+  errorMessage
+}) => {
+  const [inputValue, setInputValue] = useState("");
+
   const handleChange = (value) => {
-    onChange && onChange({ [name]: value });
+    setInputValue(value);
+    onChange && onChange(value);
   };
 
   return (
@@ -15,8 +27,11 @@ const FormInput = ({ placeholder, label, id, onChange, type, name }) => {
         placeholder={placeholder}
         id={id}
         name={name}
+        value={inputValue}
         onChange={({ target }) => handleChange(target.value)}
+        isError={!!errorMessage}
       />
+      <S.Error>{errorMessage}</S.Error>
     </S.Wrapper>
   );
 };
@@ -27,7 +42,8 @@ FormInput.propTypes = {
   name: PropTypes.string,
   id: PropTypes.string,
   onChange: PropTypes.func,
-  type: PropTypes.string
+  type: PropTypes.string,
+  errorMessage: PropTypes.string
 };
 
 export default FormInput;
