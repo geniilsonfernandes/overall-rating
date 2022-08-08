@@ -81,5 +81,16 @@ export const Text = styled.div`
 
 export const FormHead = styled.div``;
 export const FormFooter = styled.div`
-  padding-top: 32px;
+  ${({ theme }) => css`
+    padding-top: 8px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+
+    @media (max-width: ${theme.media.mobile}) {
+      padding-top: 16px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  `}
 `;
