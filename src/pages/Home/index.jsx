@@ -17,7 +17,10 @@ const Home = () => {
   };
 
   const handleSubmit = (values) => {
-    setData((prev) => [...prev, { ...values }]);
+    console.log({ date: new Date() });
+    setData((prev) => [...prev, { ...values, date: new Date() }].reverse());
+
+    console.log(data);
   };
 
   return (
@@ -52,7 +55,7 @@ const Home = () => {
             data.map((item, i) => (
               <RatingCard
                 key={i}
-                author={item.author}
+                author={item.nickname}
                 date={item.date}
                 rating={item.rating}
                 review={item.review}
