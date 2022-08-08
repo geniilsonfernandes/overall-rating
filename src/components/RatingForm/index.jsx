@@ -11,20 +11,18 @@ import { CloseIcon } from "../../Icons";
 import * as S from "./styles";
 
 const RatingForm = ({ onClose }) => {
-  const [title, setTitle] = useState("");
-  const [review, setReview] = useState("");
-  const [recommed, setRecommed] = useState("");
-  const [nickname, setNickname] = useState("");
-  const [email, setEmail] = useState("");
-  const [terms, setTerms] = useState("");
-  const [rating, setRating] = useState(0);
+  const [values, setValues] = useState({});
+  // TODO criar o testes
+
+  const onChange = (value) => {
+    setValues({ ...values, ...value });
+  };
 
   const handleCloseClick = () => {
     onClose && onClose();
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ title, review, recommed, nickname, email, terms, rating });
   };
 
   return (
@@ -33,7 +31,7 @@ const RatingForm = ({ onClose }) => {
         <CloseIcon />
       </S.Close>
       <S.Form onSubmit={handleSubmit}>
-        <RatingCounter onRating={setRating} />
+        <RatingCounter onRating={onChange} />
         <S.FormItem>
           <FormInput
             label="Review title"
@@ -41,17 +39,17 @@ const RatingForm = ({ onClose }) => {
             placeholder="Example: Easy to use"
             type="text"
             id="title"
-            onChange={setTitle}
+            onChange={onChange}
           />
         </S.FormItem>
 
         <S.FormItem>
           <S.Label>Would you recommend this product to a friend?</S.Label>
           <S.RadioGrid>
-            <Radio name="recommed" value="yes" id="yes" onCheck={setRecommed}>
+            <Radio name="recommed" value="yes" id="yes" onCheck={onChange}>
               Yes
             </Radio>
-            <Radio name="recommed" value="no" id="no" onCheck={setRecommed}>
+            <Radio name="recommed" value="no" id="no" onCheck={onChange}>
               No
             </Radio>
           </S.RadioGrid>
@@ -63,7 +61,7 @@ const RatingForm = ({ onClose }) => {
             name="review"
             id="review"
             placeholder="Example: Since I bought this a month ago, it has been used a lot. What I like best/what is worst about this product is ..."
-            onChange={setReview}
+            onChange={onChange}
           />
         </S.FormItem>
 
@@ -74,7 +72,7 @@ const RatingForm = ({ onClose }) => {
             placeholder="Example: bob27"
             type="text"
             id="nickname"
-            onChange={setNickname}
+            onChange={onChange}
           />
           <FormInput
             label="Email address (will not be published)"
@@ -82,12 +80,12 @@ const RatingForm = ({ onClose }) => {
             placeholder="Example: your@email.com"
             type="email"
             id="email"
-            onChange={setEmail}
+            onChange={onChange}
           />
         </S.FormItemGrid>
 
         <S.FormItem>
-          <Checkbox name="terms" value="yes" id="terms-yes" onCheck={setTerms}>
+          <Checkbox name="terms" value="yes" id="terms-yes" onCheck={() => {}}>
             I accept the terms and conditions
           </Checkbox>
         </S.FormItem>
