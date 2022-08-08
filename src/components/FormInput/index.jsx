@@ -10,7 +10,8 @@ const FormInput = ({
   onChange,
   type,
   name,
-  errorMessage
+  errorMessage,
+  onBlur
 }) => {
   const [inputValue, setInputValue] = useState("");
 
@@ -28,6 +29,7 @@ const FormInput = ({
         id={id}
         name={name}
         value={inputValue}
+        onBlur={() => onBlur()}
         onChange={({ target }) => handleChange(target.value)}
         isError={!!errorMessage}
       />
@@ -42,6 +44,7 @@ FormInput.propTypes = {
   name: PropTypes.string,
   id: PropTypes.string,
   onChange: PropTypes.func,
+  onBlur: PropTypes.func,
   type: PropTypes.string,
   errorMessage: PropTypes.string
 };
