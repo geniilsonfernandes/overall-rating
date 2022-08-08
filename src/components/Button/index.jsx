@@ -24,6 +24,10 @@ const Button = styled.button`
     :hover {
       background: ${theme.colors.black[400]};
     }
+    :disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
     :focus {
       outline: none;
       box-shadow: 0px 0px 0px 5px ${theme.colors.black[200]};
