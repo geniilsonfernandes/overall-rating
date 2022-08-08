@@ -1,8 +1,11 @@
-import * as S from "./styles";
+import { format } from "date-fns";
 import StarIcon from "../StarCheckbox";
-import { UserIcon } from "../../Icons/index";
 import PropTypes from "prop-types";
+import { UserIcon } from "../../Icons/index";
 
+import * as S from "./styles";
+
+// eslint-disable-next-line no-unused-vars
 const RatingCard = ({ rating, author, date, title, review }) => {
   return (
     <S.Wrapper>
@@ -10,7 +13,7 @@ const RatingCard = ({ rating, author, date, title, review }) => {
         <S.HeadGroup>
           <S.HeadItem>
             <StarIcon check={true} />
-            <span>{rating}Rating</span>
+            <span>{rating} Rating</span>
           </S.HeadItem>
           <S.HeadItem>
             <UserIcon />
@@ -18,7 +21,7 @@ const RatingCard = ({ rating, author, date, title, review }) => {
           </S.HeadItem>
         </S.HeadGroup>
         <S.HeadDate>
-          <span>{date}</span>
+          <span>{format(date, "MM/dd/yyyy")}</span>
         </S.HeadDate>
       </S.Head>
       <S.Content>
