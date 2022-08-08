@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
   body{
     font-family: 'Poppins', Helvetica, sans-serif;
     font-size: 1.6rem;
+    background: #F9F9F9;
   }
   input, textarea{
     font-size: 1.6rem;

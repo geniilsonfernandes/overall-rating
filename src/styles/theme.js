@@ -10,7 +10,8 @@ export default {
       300: "#44496C",
       400: "#2A2F55",
       500: "#121633"
-    }
+    },
+    red: { 100: "#F25B5B" }
   },
   fontSizes: {
     xsmall: "1.2rem",

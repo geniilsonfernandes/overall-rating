@@ -78,6 +78,7 @@ const RatingForm = ({ onClose, onSubmit }) => {
       return;
     }
     onSubmit(values);
+    onClose();
   };
 
   return (

@@ -9,10 +9,15 @@ import * as S from "./styles";
 import Portal from "../../components/Portal";
 
 const Home = () => {
+  const [data, setData] = useState(mock.reviews);
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   const handleToggleModal = () => {
     setIsFormOpen((s) => !s);
+  };
+
+  const handleSubmit = (values) => {
+    setData((prev) => [...prev, { ...values }]);
   };
 
   return (
@@ -30,7 +35,7 @@ const Home = () => {
 
       {isFormOpen && (
         <Portal clickOutSide={handleToggleModal} root="FORMPORTAL">
-          <RatingForm onClose={handleToggleModal} />
+          <RatingForm onClose={handleToggleModal} onSubmit={handleSubmit} />
         </Portal>
       )}
 
@@ -43,16 +48,17 @@ const Home = () => {
         </S.Section>
 
         <S.SectionReview>
-          {mock.reviews.map((item, i) => (
-            <RatingCard
-              key={i}
-              author={item.author}
-              date={item.date}
-              rating={item.rating}
-              review={item.review}
-              title={item.title}
-            />
-          ))}
+          {data &&
+            data.map((item, i) => (
+              <RatingCard
+                key={i}
+                author={item.author}
+                date={item.date}
+                rating={item.rating}
+                review={item.review}
+                title={item.title}
+              />
+            ))}
         </S.SectionReview>
       </S.MainContainer>
     </>
