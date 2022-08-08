@@ -9,7 +9,7 @@ const Checkbox = ({ children, onCheck, id, name, value }) => {
     const status = !checked; // true => false => true
     setChecked(status);
 
-    !!onCheck && onCheck(status);
+    !!onCheck && onCheck({ [name]: status });
   };
 
   return (

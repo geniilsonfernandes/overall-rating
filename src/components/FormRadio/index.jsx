@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Radio = ({ children, onCheck, id, name, value }) => {
   const handleCheked = (value) => {
-    !!onCheck && onCheck(value);
+    !!onCheck && onCheck({ [name]: value });
   };
 
   return (

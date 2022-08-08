@@ -15,7 +15,9 @@ const RatingCounter = ({ onRating }) => {
 
     setStarsAmount(newRatingAmount);
     setRatingCounter(ratingCounter === rating ? 0 : rating);
-    !!onRating && onRating(ratingCounter === rating ? 0 : rating);
+
+    !!onRating &&
+      onRating(ratingCounter === rating ? { rating: 0 } : { rating: rating });
   };
 
   return (

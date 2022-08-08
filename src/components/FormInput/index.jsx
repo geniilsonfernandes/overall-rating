@@ -2,8 +2,9 @@ import * as S from "./styles";
 import PropTypes from "prop-types";
 
 const FormInput = ({ placeholder, label, id, onChange, type, name }) => {
+  // TODO cria a validacao de imput
   const handleChange = (value) => {
-    onChange && onChange(value);
+    onChange && onChange({ [name]: value });
   };
 
   return (

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const TextArea = ({ placeholder, label, id, onChange, name }) => {
   const handleChange = (value) => {
-    onChange && onChange(value);
+    onChange && onChange({ [name]: value });
   };
 
   return (
