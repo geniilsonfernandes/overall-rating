@@ -1,6 +1,6 @@
 export default {
   title: "easy to use",
-  date: 2021,
+  date: new Date(2014, 1, 11),
   rating: 3.4,
   author: "david",
   review:

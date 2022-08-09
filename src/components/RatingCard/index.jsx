@@ -35,7 +35,7 @@ const RatingCard = ({ rating, author, date, title, review }) => {
 RatingCard.propTypes = {
   rating: PropTypes.number,
   author: PropTypes.string,
-  date: PropTypes.number,
+  date: PropTypes.instanceOf(Date),
   title: PropTypes.string,
   review: PropTypes.string
 };

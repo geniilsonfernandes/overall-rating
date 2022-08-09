@@ -1,16 +1,7 @@
 import styled, { css } from "styled-components";
 
-const WrapperModifier = {
-  loading: (theme) => css`
-    pointer-events: none;
-    cursor: not-allowed;
-    background: ${theme.colors.black[500]};
-    opacity: 0.7;
-  `
-};
-
 const Button = styled.button`
-  ${({ theme, isLoading }) => css`
+  ${({ theme }) => css`
     background: ${theme.colors.black[500]};
     font-size: ${theme.fontSizes.small};
     color: ${theme.colors.white[100]};
@@ -32,7 +23,6 @@ const Button = styled.button`
       outline: none;
       box-shadow: 0px 0px 0px 5px ${theme.colors.black[200]};
     }
-    ${isLoading && WrapperModifier.loading(theme)}
   `}
 `;
 

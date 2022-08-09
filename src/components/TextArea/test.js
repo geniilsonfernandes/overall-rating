@@ -26,6 +26,27 @@ describe("Textarea", () => {
     expect(textarea).toHaveValue("i liked");
     expect(onChange).toBeCalledTimes(7);
   });
+  it("should call function onblur", () => {
+    const onChange = jest.fn();
+    const onBlur = jest.fn();
+    renderWithTheme(
+      <>
+        <span data-testid="onblur">onblur</span>
+        <Textarea {...props} onChange={onChange} type="text" onBlur={onBlur} />
+      </>
+    );
+
+    const input = screen.getByPlaceholderText("i have a dream");
+    const onblurEl = screen.getByText("onblur");
+
+    expect(input).toBeInTheDocument();
+
+    userEvent.click(input);
+    userEvent.type(input, "hello");
+    userEvent.click(onblurEl);
+
+    expect(onBlur).toBeCalled();
+  });
   it("should have focus when label click", () => {
     const onChange = jest.fn();
     renderWithTheme(<Textarea {...props} onChange={onChange} />);
@@ -39,5 +60,14 @@ describe("Textarea", () => {
     userEvent.click(label);
 
     expect(textarea).toHaveFocus();
+  });
+  it("should show erro message", () => {
+    const onChange = jest.fn();
+    renderWithTheme(
+      <Textarea {...props} onChange={onChange} errorMessage="this a error" />
+    );
+
+    const error = screen.getByText("this a error");
+    expect(error).toBeInTheDocument();
   });
 });

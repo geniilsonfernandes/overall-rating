@@ -14,6 +14,14 @@ Este projeto é uma interface de armazenamento de comentários e feedback de cli
 - ferramenta para criar os componentes isolados da aplicação.
 
 
+## Testes Unitários
+
+```
+# Realizado os teste dos componentes e contexto da aplicaçao, localstorage...
+# coverage dos testes
+npm run test -- --coverage src
+
+```
 
 ## Como Rodar
 

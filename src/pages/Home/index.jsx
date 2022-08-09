@@ -19,8 +19,6 @@ const Home = () => {
   const handleSubmit = (values) => {
     console.log({ date: new Date() });
     setData((prev) => [...prev, { ...values, date: new Date() }].reverse());
-
-    console.log(data);
   };
 
   return (

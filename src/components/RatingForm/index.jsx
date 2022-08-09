@@ -7,9 +7,9 @@ import RatingCounter from "../RatingCounter";
 import Checkbox from "../FormCheckbox";
 import PropTypes from "prop-types";
 import { CloseIcon } from "../../Icons";
+import { useValiddate } from "../../hook/useValiddate";
 
 import * as S from "./styles";
-import { useValiddate } from "../../hook/useValiddate";
 
 const RatingForm = ({ onClose, onSubmit }) => {
   //values
@@ -83,7 +83,7 @@ const RatingForm = ({ onClose, onSubmit }) => {
 
   return (
     <S.Wrapper>
-      <S.Close onClick={() => handleCloseClick()}>
+      <S.Close onClick={() => handleCloseClick()} aria-label="close form">
         <CloseIcon />
       </S.Close>
       <S.Form onSubmit={handleSubmit}>

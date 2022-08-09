@@ -25,10 +25,10 @@ describe("Input", () => {
 
     userEvent.click(radio1);
     expect(radio1.previousSibling).toBeChecked();
-    expect(onChange).toBeCalledWith("yes");
+    expect(onChange).toBeCalledWith({ remcomed: "yes" });
 
     userEvent.click(radio2);
     expect(radio2.previousSibling).toBeChecked();
-    expect(onChange).toBeCalledWith("no");
+    expect(onChange).toBeCalledWith({ remcomed: "no" });
   });
 });

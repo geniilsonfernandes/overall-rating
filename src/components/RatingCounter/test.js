@@ -13,9 +13,9 @@ describe("RatingCounter", () => {
     expect(screen.getByText("Overall rating")).toBeInTheDocument();
 
     userEvent.click(ratingStars[2]);
-    expect(onRating).toBeCalledWith(3);
+    expect(onRating).toBeCalledWith({ rating: 3 });
 
     userEvent.click(ratingStars[2]);
-    expect(onRating).toBeCalledWith(0);
+    expect(onRating).toBeCalledWith({ rating: 0 });
   });
 });

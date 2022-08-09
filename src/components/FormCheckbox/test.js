@@ -18,6 +18,6 @@ describe("Checkbox ", () => {
 
     userEvent.click(input);
     expect(input.previousSibling).toBeChecked();
-    expect(onChange).toBeCalledWith(true);
+    expect(onChange).toBeCalledWith({ remcomed: true });
   });
 });

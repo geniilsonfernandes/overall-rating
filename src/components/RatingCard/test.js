@@ -12,6 +12,6 @@ describe("RatingCard", () => {
     expect(screen.getByText("By: david")).toBeInTheDocument();
     expect(screen.getByText(/David Grant has been/i)).toBeInTheDocument();
     expect(screen.getByText(/rating/i)).toBeInTheDocument();
-    expect(screen.getByText(/2021/i)).toBeInTheDocument();
+    expect(screen.getByText("02/11/2014")).toBeInTheDocument();
   });
 });
