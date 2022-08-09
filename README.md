@@ -11,10 +11,20 @@ Este projeto é uma interface de armazenamento de comentários e feedback de cli
 
 https://overall-rating-ddutfs7la-geniilsonfernandes.vercel.app/
 
-## Libs Usadas
+
+## Funcionalidades
+
+- Home
+
+  - :heavy_check_mark: interface responsiva
+  - :heavy_check_mark: validação dos inputs do formulário
+
+## Libs e recursos usados
 
 - styled components 
 - storybook
+- react portal
+- testing-library 
 
 ## Testes Unitários
 
