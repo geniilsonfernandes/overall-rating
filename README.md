@@ -7,19 +7,28 @@
 
 Este projeto é uma interface de armazenamento de comentários e feedback de clientes, a ideia é ter um formulário simples e uma interface bem limpa.
 
+## Projeto ao vivo
+
+https://overall-rating-ddutfs7la-geniilsonfernandes.vercel.app/
 
 ## Libs Usadas
 
 - styled components 
-- ferramenta para criar os componentes isolados da aplicação.
-
+- storybook
 
 ## Testes Unitários
 
 ```
-# Realizado os teste dos componentes e contexto da aplicaçao, localstorage...
+# Realizado os teste unitários dos componentes 
 # coverage dos testes
 npm run test -- --coverage src
+
+```
+## storybook
+
+```
+# lib dos componentns
+npm run storybook
 
 ```
 
